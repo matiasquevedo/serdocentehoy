@@ -41,4 +41,9 @@ class AddLlamadosTable extends Migration
     {
         //
     }
+
+    public function boot()
+    {
+        Schema::defaultStringLength(191);
+    }
 }

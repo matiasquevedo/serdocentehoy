@@ -16,9 +16,9 @@ class AddInstitucionesTable extends Migration
         //
         Schema::create('instituciones', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre');->unique();
-            $table->string('numero');->unique();
-            $table->string('ubicacion');->unique();
+            $table->string('nombre')->unique();
+            $table->string('numero')->unique();
+            $table->string('ubicacion')->unique();
             $table->enum('nivel',['nivel inicial','primaria','secundaria','nivel terciario','universidad']);
             $table->enum('tipo',['especial','albergue']);
 
@@ -34,4 +34,5 @@ class AddInstitucionesTable extends Migration
     {
         //
     }
+
 }
