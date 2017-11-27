@@ -1,5 +1,9 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
+@extends('main')
+
+
+@section('title', 'Soy Docente')
+
+@section('content')
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,17 +68,16 @@
             }
         </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
+        <div class="container">
             <div class="content">
                 <div text-center>
-                    <img src="img/icon.png" alt="" height="400" width="400">
+                    <img src="img/icon.png" alt="" height="200" width="200">
                 </div>
-                <div class="title m-b-md">
-                    Sitio en Construcción
+                <div>
+                    <h1>Sitio en Construcción</h1>
                 </div>
 
             </div>
         </div>
-    </body>
-</html>
+
+@endsection
