@@ -68,7 +68,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div text-center>
-                    <img src="icon.png" alt="" height="400" width="400">
+                    <img src="img/icon.png" alt="" height="400" width="400">
                 </div>
                 <div class="title m-b-md">
                     Sitio en Construcción
