@@ -22,6 +22,14 @@ class AddInstitucionesTable extends Migration
             $table->enum('nivel',['nivel inicial','primaria','secundaria','nivel terciario','universidad']);
             $table->enum('tipo',['especial','albergue']);
 
+            $table->integer('user_id')->unsigned();//
+
+            //llaves
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->rememberToken();
+            $table->timestamps();
+
         });
     }
 

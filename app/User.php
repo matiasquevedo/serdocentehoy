@@ -31,6 +31,10 @@ class User extends Authenticatable
         return $this->hasMany('App\Llamado');
     }
 
+    public function institucion(){
+        return $this->belongsTo('App\Insitucion');
+    }
+
     public function admin(){
         return $this->type === 'admin';
     }
@@ -42,4 +46,11 @@ class User extends Authenticatable
     public function escuela(){
         return $this->type === 'escuela';
     }
+
+  /*  DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=inggerar_serdocentehoy
+DB_USERNAME=inggerar_docente
+DB_PASSWORD=soydocente*/
 }
