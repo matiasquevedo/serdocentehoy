@@ -17,4 +17,20 @@
 Route::get('/', 'HomeController@index');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+#Route::get('/', 'HomeController@index')->name('home');
+
+Route::group(['prefix'=>'admin'], function(){
+
+	Route::resource('users','UsersController');
+	Route::get('users/{id}/destroy',[
+		'uses'=>'UsersController@destroy',
+		'as'=>'users.destroy'
+	]);
+
+	Route::resource('instituciones','InstitucionesController');
+	Route::get('instituciones/{id}/destroy',[
+		'uses'=>'InstitucionesController@destroy',
+		'as'=>'instituciones.destroy'
+	]);
+});
+
