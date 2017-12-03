@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Institucion;
 
 class InstitucionesController extends Controller
 {
@@ -14,6 +16,8 @@ class InstitucionesController extends Controller
     public function index()
     {
         //
+        $escuelas = Institucion::orderBy('id','ASC')->paginate(5);
+        return view('admin.instituciones.index')->with('escuelas',$escuelas);
     }
 
     /**
@@ -80,5 +84,9 @@ class InstitucionesController extends Controller
     public function destroy($id)
     {
         //
+        $escuela = Institucion::find($id);
+        flash('Se a eliminado ' . $escuela->nombre . ' de forma exitosa')->error();
+        $escuela->delete();
+        return redirect()->route('instituciones.index');
     }
 }
