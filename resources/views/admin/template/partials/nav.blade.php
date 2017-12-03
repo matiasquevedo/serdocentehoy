@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <li ><a href="">Llamados<span class="sr-only">(current)</span></a></li>
         <li><a href="{{route('users.index')}}">Usuarios</a></li>
-        <li><a href="">Instituciones</a></li>
+        <li><a href="{{route('instituciones.index')}}">Instituciones</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         @guest
