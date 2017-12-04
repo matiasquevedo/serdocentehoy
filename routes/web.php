@@ -32,5 +32,19 @@ Route::group(['prefix'=>'admin'], function(){
 		'uses'=>'InstitucionesController@destroy',
 		'as'=>'instituciones.destroy'
 	]);
+
+	Route::resource('llamados','LlamadosController');
+	Route::get('llamados/{id}/destroy',[
+		'uses'=>'LlamadosController@destroy',
+		'as'=>'llamados.destroy'
+	]);
 });
 
+Route::group(['prefix'=>'escuela'], function(){
+
+	Route::resource('llamados','LlamadosController');
+	Route::get('llamados/{id}/destroy',[
+		'uses'=>'LlamadosController@destroy',
+		'as'=>'llamados.destroy'
+	]);
+});

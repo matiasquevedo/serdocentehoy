@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Llamado;
 
-class llamadosController extends Controller
+class LlamadosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,6 +25,7 @@ class llamadosController extends Controller
     public function create()
     {
         //
+        return view('escuela.llamados.create');
     }
 
     /**
@@ -35,6 +37,12 @@ class llamadosController extends Controller
     public function store(Request $request)
     {
         //
+        //dd('todopeola');
+        $llamado = new Llamado($request->all()); 
+        $llamado->institucion_id = \Auth::user()->id;       
+        $llamado->save();
+        return redirect()->route('llamados.index');
+
     }
 
     /**

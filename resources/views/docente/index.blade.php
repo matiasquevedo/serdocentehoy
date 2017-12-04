@@ -12,7 +12,7 @@
 					<div class="panel-body">
 						<div class="panel-content">
 							<h3 class="m-b-0">
-								<strong>Inicio</strong>
+								<strong>Docente</strong>
 							</h3>
 							<div>
                     			<img src="img/icon.png" alt="" height="200" width="200">

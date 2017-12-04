@@ -32,7 +32,7 @@ class User extends Authenticatable
     }
 
     public function institucion(){
-        return $this->belongsTo('App\Insitucion');
+        return $this->belongsTo('App\Institucion');
     }
 
     public function admin(){
