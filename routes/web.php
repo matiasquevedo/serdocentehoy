@@ -47,4 +47,9 @@ Route::group(['prefix'=>'escuela'], function(){
 		'uses'=>'LlamadosController@destroy',
 		'as'=>'llamados.destroy'
 	]);
+	Route::get('llamados/misllamados',[
+		'uses'=>'LlamadosController@indexEscuela',
+		'as'=>'llamados.indexEscuela'
+	]);
+
 });

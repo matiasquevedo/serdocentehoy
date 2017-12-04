@@ -24,9 +24,9 @@ class AddLlamadosTable extends Migration
             $table->string('horario_catedra');//horario en que se tiene que dar clases
             $table->string('descripcion');//
 
-            $table->integer('institucion_id')->unsigned();//datos de la escuela
+            $table->integer('user_id')->unsigned();//datos de la escuela
             //llaves
-            $table->foreign('institucion_id')->references('id')->on('instituciones')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
 
             

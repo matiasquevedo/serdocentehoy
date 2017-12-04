@@ -9,7 +9,7 @@ class Llamado extends Model
 {
     //
     protected $fillable = [
-        'institucion_id', '	area_id', 'titulo','fechahora','orden','horario_catedra','descripcion'
+        'titulo', 'fecha', 'hora','orden','orden','horario_catedra','descripcion','institucion_id'
     ];
 
     public function institucion(){

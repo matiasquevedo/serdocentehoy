@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Llamado;
+use Laracasts\Flash\Flash;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class LlamadosController extends Controller
 {
@@ -15,6 +18,18 @@ class LlamadosController extends Controller
     public function index()
     {
         //
+        //dd('asa');
+        $llamados = DB::table('llamados')->where('user_id',\Auth::user()->id)->get();
+        return view('escuela.llamados.index')->with('llamados',$llamados);
+
+    }
+
+    public function indexEscuela()
+    {
+        //
+        dd('asa');
+       
+        
     }
 
     /**
@@ -39,7 +54,7 @@ class LlamadosController extends Controller
         //
         //dd('todopeola');
         $llamado = new Llamado($request->all()); 
-        $llamado->institucion_id = \Auth::user()->id;       
+        $llamado->user_id = \Auth::user()->id;       
         $llamado->save();
         return redirect()->route('llamados.index');
 
